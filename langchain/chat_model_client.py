@@ -45,9 +45,14 @@ def get_llama():
         base_url=env_config['OLLAMA_BASE_URL'],
         temperature=0, # 设置成0最稳定；structured generation中稳定最重要
         max_tokens=2000,
-        frequency_penalty=0,
-        presence_penalty=0,
-        top_p=1.0
+        model_kwargs={
+            'frequency_penalty':0,
+            'presence_penalty':0,
+            'top_p':1.0,
+        }
+        # frequency_penalty=0,
+        # presence_penalty=0,
+        # top_p=1.0
     )
     return llm
 
