@@ -7,6 +7,11 @@ import os
 from dotenv import dotenv_values
 env_config = dotenv_values("../.env")
 
+from langchain.globals import set_debug
+
+# 开启全局 verbose
+# set_debug(True)
+
 def get_deepseek():
     llm = ChatOpenAI(
         api_key=env_config['DEEPSEEK_API_KEY'],
