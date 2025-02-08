@@ -33,6 +33,8 @@ def get_openai():
     llm = ChatOpenAI(
         api_key=env_config['OPENAI_API_KEY'],
         model='gpt-3.5-turbo',
+        # model="gpt-3.5-turbo-1106",
+        # model="gpt-4o",
         temperature=0, # 设置成0最稳定；structured generation中稳定最重要
         max_tokens=2000,
         model_kwargs = {
